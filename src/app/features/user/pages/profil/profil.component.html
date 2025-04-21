@@ -1,0 +1,12 @@
+<p-card header="Mon Profil" *ngIf="profile() as user">
+  <p><strong>Nom :</strong> {{ user.username }}</p>
+  <p><strong>Email :</strong> {{ user.email }}</p>
+  <p><strong>Rôle :</strong> {{ user.role }}</p>
+  <button
+    pButton
+    label="Modifier"
+    icon="pi pi-pencil"
+    (click)="openEdit()"
+    class="mt-3"
+  ></button>
+</p-card>

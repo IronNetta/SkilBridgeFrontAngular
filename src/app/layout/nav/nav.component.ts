@@ -54,6 +54,7 @@ export class NavComponent {
         {
           label: currentUser.user.username,
           icon: 'pi pi-user',
+          routerLink: '/profile',
         },
         ...(currentUser.user.role.includes('ADMIN') ? [
           {

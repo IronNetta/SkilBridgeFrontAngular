@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="save()" class="p-fluid">
+  <label for="username">Nom</label>
+  <input pInputText id="username" formControlName="username" />
+
+  <label for="email">Email</label>
+  <input pInputText id="email" formControlName="email" />
+
+  <label for="password">Nouveau mot de passe</label>
+  <input pPassword id="password" formControlName="password" toggleMask="true" />
+
+  <button
+    pButton
+    type="submit"
+    label="Enregistrer"
+    [disabled]="form.invalid"
+    class="mt-3"
+  ></button>
+</form>

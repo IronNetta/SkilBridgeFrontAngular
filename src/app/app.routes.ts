@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { isConnectedGuard } from './features/shared/guards/is-connected.guard';
 
 export const routes: Routes = [
     {
@@ -12,6 +13,12 @@ export const routes: Routes = [
   },
   {
     path: 'mentors',
-    loadComponent: () => import('./features/mentors/pages/mentor-list/mentor-list.component').then(m => m.MentorListComponent)
+    loadComponent: () => import('./features/mentors/pages/mentor-list/mentor-list.component').then(m => m.MentorListComponent),
+    canActivate: [isConnectedGuard]
   },
+  {
+    path: 'profile',
+    loadComponent: () => import('./features/user/pages/profil/profil.component').then(m => m.ProfilComponent),
+    canActivate: [isConnectedGuard]
+  }
 ];
