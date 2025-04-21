@@ -1,40 +1,106 @@
-.home {
+.hero {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  padding: 5rem 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: #555;
+  }
+
+  .cta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #4f46e5;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background-color: #4338ca;
+      }
+    }
+  }
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 1.2rem;
   padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
 
-  .hero {
-    background: linear-gradient(to right, #e0eafc, #cfdef3);
-    padding: 4rem 2rem;
-    text-align: center;
+  &:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+}
+
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  p-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
     border-radius: 1rem;
-    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-    h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      max-width: 100px;
+      margin-bottom: 1.5rem;
     }
 
     p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
     }
-
-    .cta {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-  }
-
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .dashboard .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
   }
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.features p-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+

@@ -7,11 +7,13 @@ import { Dialog } from 'primeng/dialog';
 import { LoginRegisterCardComponent } from '../../../auth/component/login-register-card/login-register-card.component';
 import { DashboardService } from '../../../home/services/Dashboard.service';
 import { DashboardData } from '../../../home/models/dashboard.model';
+import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ButtonModule, CardModule, Dialog, LoginRegisterCardComponent],
+  imports: [CommonModule, ButtonModule, CardModule, Dialog, LoginRegisterCardComponent, RatingModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
