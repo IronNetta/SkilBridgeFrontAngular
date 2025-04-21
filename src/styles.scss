@@ -14,3 +14,33 @@
     margin-top: auto;
   }
 }
+
+:root {
+  --background: #ffffff;
+  --text: #1f2937;
+  --card-bg: #f9fafb;
+  --primary: #4f46e5;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme {
+  --background: #1f2937;
+  --text: #f9fafb;
+  --card-bg: #374151;
+  --primary: #6366f1;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+p-card {
+  background: var(--card-bg);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+button {
+  background-color: var(--primary);
+}

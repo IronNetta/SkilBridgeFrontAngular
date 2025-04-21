@@ -9,11 +9,12 @@ import { DashboardService } from '../../../home/services/Dashboard.service';
 import { DashboardData } from '../../../home/models/dashboard.model';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { ThemeToggleComponent as appThemeToggle } from '../../../../components/theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ButtonModule, CardModule, Dialog, LoginRegisterCardComponent, RatingModule, FormsModule],
+  imports: [CommonModule, ButtonModule, CardModule, Dialog, LoginRegisterCardComponent, RatingModule, FormsModule, appThemeToggle],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
