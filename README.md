@@ -2,6 +2,8 @@
 
 SkillBridge est une plateforme de mentorat en ligne qui connecte des étudiants avec des professionnels pour des sessions de guidance, conseils de carrière et apprentissage personnalisé.
 
+(en cours de développement)
+
 ## 🔗 Fonctionnalités principales
 
 - Inscription & Authentification JWT
