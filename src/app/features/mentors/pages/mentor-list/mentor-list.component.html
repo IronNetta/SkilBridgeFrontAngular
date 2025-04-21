@@ -1,0 +1,46 @@
+<div class="filters">
+  <p-select
+    [options]="skills()"
+    optionLabel="name"
+    optionValue="name"
+    placeholder="Filtrer par compétence"
+    [ngModel]="selectedSkill()"
+    (ngModelChange)="onSkillChange($event)"
+  ></p-select>
+
+  <p-inputNumber
+    [ngModel]="minRating()"
+    (ngModelChange)="onMinRatingChange($event)"
+    [min]="0"
+    [max]="5"
+    placeholder="Note minimale"
+  ></p-inputNumber>
+</div>
+<div class="mentors-list">
+  @if (mentors().length > 0) {
+    @for (mentor of mentors(); track mentor.id) {
+      <p-card styleClass="mentor-card">
+      <ng-template pTemplate="header">
+        <strong>{{ mentor.username }}</strong>
+      </ng-template>
+      <p>{{ mentor.bio }}</p>
+      <p>📧 {{ mentor.email }}</p>
+      <p-rating
+        [ngModel]="mentor.averageRating"
+        [readonly]="true"
+        [stars]="5"
+      ></p-rating>
+    </p-card>
+  }
+  } @else {
+    <p>Aucun mentor trouvé</p>
+  }
+</div>
+
+<p-paginator
+  [rows]="10"
+  [totalRecords]="totalPages() * 10"
+  [first]="(currentPage() - 1) * 10"
+  (onPageChange)="onPageChange($event)"
+>
+</p-paginator>

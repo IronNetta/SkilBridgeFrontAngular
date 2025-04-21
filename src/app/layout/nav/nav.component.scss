@@ -1,0 +1,25 @@
+.custom-navbar {
+  background: linear-gradient(to right, #007ad9, #5eb1ff);
+  border: none;
+  border-radius: 0;
+  color: #fff;
+
+  .p-menubar-root {
+    background-color: transparent;
+    border: none;
+  }
+
+  .p-menuitem-link {
+    color: #fff !important;
+    font-weight: 500;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+}
+
+.custom-dialog ::ng-deep .p-dialog {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}

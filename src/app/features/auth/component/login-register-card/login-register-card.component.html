@@ -1,0 +1,10 @@
+<div class="flip-container" [class.flipped]="isFlipped()">
+  <div class="flipper">
+    <div class="front">
+      <app-login (close)="close.emit()" (_switchForm)="flip()"></app-login>
+    </div>
+    <div class="back">
+      <app-register (close)="close.emit()" (_switchForm)="flip()"></app-register>
+    </div>
+  </div>
+</div>
