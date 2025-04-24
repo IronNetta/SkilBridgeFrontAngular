@@ -6,7 +6,7 @@ import { CardModule } from 'primeng/card';
 import { Dialog } from 'primeng/dialog';
 import { LoginRegisterCardComponent } from '../../../auth/component/login-register-card/login-register-card.component';
 import { DashboardService } from '../../../home/services/Dashboard.service';
-import { DashboardData } from '../../../home/models/dashboard.model';
+import { DashboardData,StudentDashboard,MentorDashboard,AdminDashboard } from '../../../home/models/dashboard.model';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { ThemeToggleComponent as appThemeToggle } from '../../../../components/theme-toggle/theme-toggle.component';
@@ -30,6 +30,18 @@ export class HomeComponent {
 
   dashboard = signal<DashboardData | null>(null);
 
+  get studentDashboard() {
+    return this.dashboard()?.role === 'STUDENT' ? this.dashboard() as StudentDashboard : null;
+  }
+  
+  get mentorDashboard() {
+    return this.dashboard()?.role === 'MENTOR' ? this.dashboard() as MentorDashboard : null;
+  }
+  
+  get adminDashboard() {
+    return this.dashboard()?.role === 'ADMIN' ? this.dashboard() as AdminDashboard : null;
+  }
+
   constructor() {
     effect(() => {
       const currentUser = this.user(); // on déclenche le signal
@@ -49,5 +61,9 @@ export class HomeComponent {
 
   closeLogin() {
     this.loginVisible.set(false);
+  }
+
+  hasRecommendedMentors(): boolean {
+    return !!this.studentDashboard?.recommendedMentors && this.studentDashboard.recommendedMentors.length > 0;
   }
 }
