@@ -1,0 +1,19 @@
+<section class="calendar-container">
+  <div class="header">
+    <h2>📆 Mes disponibilités</h2>
+    <a
+      pButton
+      icon="pi pi-arrow-left"
+      label="Retour au tableau de bord"
+      class="p-button-sm p-button-secondary"
+      [routerLink]="['/home']"
+    ></a>
+  </div>
+
+  <p-toast></p-toast>
+
+  <full-calendar
+    class="fc-theme-standard"
+    [options]="calendarOptions()"
+  ></full-calendar>
+</section>

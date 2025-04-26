@@ -20,5 +20,11 @@ export const routes: Routes = [
     path: 'profile',
     loadComponent: () => import('./features/user/pages/profil/profil.component').then(m => m.ProfilComponent),
     canActivate: [isConnectedGuard]
+  },
+  {
+    path: 'mentor/availabilities',
+    loadComponent: () => import('./features/mentors/calendar/mentor-availability-calendar/mentor-availability-calendar.component').then(m => m.MentorAvailabilityCalendarComponent),
+    canActivate: [isConnectedGuard]
   }
+
 ];

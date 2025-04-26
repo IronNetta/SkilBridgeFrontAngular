@@ -10,11 +10,12 @@ import { DashboardData,StudentDashboard,MentorDashboard,AdminDashboard } from '.
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { ThemeToggleComponent as appThemeToggle } from '../../../../components/theme-toggle/theme-toggle.component';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ButtonModule, CardModule, Dialog, LoginRegisterCardComponent, RatingModule, FormsModule, appThemeToggle],
+  imports: [CommonModule, ButtonModule, CardModule, Dialog, LoginRegisterCardComponent, RatingModule, FormsModule, appThemeToggle, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -33,11 +34,11 @@ export class HomeComponent {
   get studentDashboard() {
     return this.dashboard()?.role === 'STUDENT' ? this.dashboard() as StudentDashboard : null;
   }
-  
+
   get mentorDashboard() {
     return this.dashboard()?.role === 'MENTOR' ? this.dashboard() as MentorDashboard : null;
   }
-  
+
   get adminDashboard() {
     return this.dashboard()?.role === 'ADMIN' ? this.dashboard() as AdminDashboard : null;
   }

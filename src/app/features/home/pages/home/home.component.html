@@ -115,17 +115,17 @@
         @case ('MENTOR') {
           <div class="dashboard-grid">
 
-            <p-card header="📅 Sessions à venir">
+            <p-card header="📆 Mes disponibilités">
               <p>
-                Vous avez
-                <strong>{{ mentorDashboard?.upcomingSessions }}</strong> session(s) prévues.
+                Consultez vos sessions à venir et gérez vos créneaux directement dans le calendrier.
               </p>
-              <button
+              <a
                 pButton
-                label="Gérer mon planning"
-                icon="pi pi-clock"
-                class="p-button-text p-button-sm"
-              ></button>
+                icon="pi pi-calendar"
+                label="Ouvrir le calendrier"
+                class="p-button-sm p-button-success"
+                [routerLink]="['/mentor/availabilities']"
+              ></a>
             </p-card>
 
             <p-card header="⭐ Ma note moyenne">

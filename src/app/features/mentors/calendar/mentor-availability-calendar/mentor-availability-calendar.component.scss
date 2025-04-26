@@ -1,0 +1,77 @@
+.calendar-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #2e2e2e;
+      margin: 0;
+    }
+  }
+
+  ::ng-deep .fc {
+    font-family: 'Segoe UI', sans-serif;
+
+    .fc-toolbar-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .fc-button {
+      background-color: #00c853;
+      border: none;
+      border-radius: 6px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+
+      &:hover {
+        background-color: #009624;
+      }
+    }
+
+    .fc-event {
+      border-radius: 6px;
+      font-size: 0.85rem;
+      padding: 2px 4px;
+    }
+
+    .fc-daygrid-event-dot {
+      border-color: #00c853;
+    }
+
+    .fc-timegrid-slot-label-cushion {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+::ng-deep .fc-tooltip {
+  position: absolute;
+  z-index: 10001;
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  pointer-events: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  max-width: 200px;
+  line-height: 1.3;
+  white-space: normal;
+}
+
+::ng-deep .fc-event:hover {
+  cursor: pointer;
+  opacity: 0.85;
+}
